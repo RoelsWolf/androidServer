@@ -3,5 +3,16 @@
     "dotenv": "^16.0.3",
     "firebase": "^9.19.0"
   },
-  "type": "module"
+  "type": "module",
+  "name": "minecraftserverdata",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }
