@@ -1,7 +1,7 @@
 // Import the functions you need from the SDKs you need
 import firebase from "firebase/compat/app";
 import 'firebase/compat/firestore';
-import config from "./config";
+import config from "./config.js";
 
 const firebaseConfig = {
   apiKey: config.apiKey,
