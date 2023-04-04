@@ -1,4 +1,4 @@
-import { firestore } from "./firebase.js";
+import { firestore, increment } from "./firebase.js";
 import config from "./config.js";
 
 const ip = config.ip;
@@ -38,18 +38,9 @@ export const updateDataBase = async () => {
     });
 
     await data.sample.forEach(player => {
-        firestore.collection('playerActivity').doc(player.name).get().then(doc => {
-            if(!doc.exists) {
-                //if not, create it
-                firestore.collection('playerActivity').doc(player.name).set({
-                    count: 1,
-                });
-            } else {
-                //if yes, update lastSeen
-                firestore.collection('playerActivity').doc(player.name).update({
-                    count: doc.data().count + 1,
-                });
-            }
-        });
+        firestore.collection('playerActivity').doc(player.name).update({
+            count: increment(1),
+        })
+        console.log(player.name)
     });
 }

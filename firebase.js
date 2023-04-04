@@ -17,5 +17,5 @@ if(!firebase.apps.length) {
     firebase.initializeApp(firebaseConfig);
 }
 
-
+export const increment = firebase.firestore.FieldValue.increment;
 export const firestore = firebase.firestore();
